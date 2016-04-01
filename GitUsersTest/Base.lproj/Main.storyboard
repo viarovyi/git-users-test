@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Clw-q5-rKL">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--GitHub users-->
+        <scene sceneID="jeB-cG-76a">
+            <objects>
+                <tableViewController id="XGV-3A-qx3" customClass="GUUsersViewController" customModule="GitUsersTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="sLN-cA-UJU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GUUserCell" rowHeight="90" id="x6H-hH-Npb" customClass="GUUserCell" customModule="GitUsersTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6H-hH-Npb" id="huq-WY-2JU">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qK-hP-7Z6">
+                                            <rect key="frame" x="102" y="10" width="478" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88G-vb-WLc">
+                                            <rect key="frame" x="15" y="10" width="69" height="69"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="88G-vb-WLc" secondAttribute="height" multiplier="1:1" id="sdH-1R-kRR"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0qK-hP-7Z6" firstAttribute="top" secondItem="huq-WY-2JU" secondAttribute="top" constant="10" id="Cgr-E9-YnU"/>
+                                        <constraint firstAttribute="trailing" secondItem="0qK-hP-7Z6" secondAttribute="trailing" constant="20" id="ITz-G4-4Bw"/>
+                                        <constraint firstItem="88G-vb-WLc" firstAttribute="top" secondItem="huq-WY-2JU" secondAttribute="top" constant="10" id="ZKQ-5A-94A"/>
+                                        <constraint firstItem="0qK-hP-7Z6" firstAttribute="leading" secondItem="88G-vb-WLc" secondAttribute="trailing" constant="18.5" id="bZb-pN-k94"/>
+                                        <constraint firstItem="88G-vb-WLc" firstAttribute="leading" secondItem="huq-WY-2JU" secondAttribute="leading" constant="15" id="gXA-pT-QQG"/>
+                                        <constraint firstAttribute="bottom" secondItem="88G-vb-WLc" secondAttribute="bottom" constant="10" id="iNm-cI-Edz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="88G-vb-WLc" id="fXh-zr-Bm9"/>
+                                    <outlet property="loginLabel" destination="0qK-hP-7Z6" id="c8d-Hj-CB4"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GULoadingCell" id="Ztn-zt-tq5" customClass="GULoadingCell" customModule="GitUsersTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="182" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ztn-zt-tq5" id="9Dp-lu-rdW">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-cm-YH2">
+                                            <rect key="frame" x="290" y="35" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dIh-cm-YH2" firstAttribute="centerY" secondItem="9Dp-lu-rdW" secondAttribute="centerY" id="6TY-pI-TyF"/>
+                                        <constraint firstItem="dIh-cm-YH2" firstAttribute="centerX" secondItem="9Dp-lu-rdW" secondAttribute="centerX" id="xTy-NA-tcL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityIndicator" destination="dIh-cm-YH2" id="DOC-CH-6m5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XGV-3A-qx3" id="nTZ-mA-utl"/>
+                            <outlet property="delegate" destination="XGV-3A-qx3" id="ftI-lP-PCt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="GitHub users" id="xoH-rx-hVe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZC-Me-hqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="323"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PID-DT-Zxu">
+            <objects>
+                <navigationController id="Clw-q5-rKL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B1y-Lu-NSs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XGV-3A-qx3" kind="relationship" relationship="rootViewController" id="3gi-xP-APJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dc-VN-LBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-912" y="323"/>
+        </scene>
+    </scenes>
+</document>
