@@ -15,7 +15,6 @@ DerivedData
 .idea/
 *.hmap
 UserInterfaceState.xcuserstate
-AvantArte.xcodeproj/project.xcworkspace/xcuserdata/iegorborodai.xcuserdatad/UserInterfaceState.xcuserstate
+UserInterfaceState.xcuserstate
 *.xcuserstate
-AvantArte.xcodeproj/project.xcworkspace/xcshareddata/AvantArte.xccheckout
 *.xccheckout
