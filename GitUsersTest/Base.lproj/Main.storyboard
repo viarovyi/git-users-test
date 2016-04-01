@@ -10,7 +10,7 @@
         <scene sceneID="jeB-cG-76a">
             <objects>
                 <tableViewController id="XGV-3A-qx3" customClass="GUUsersViewController" customModule="GitUsersTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="sLN-cA-UJU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="sLN-cA-UJU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,14 +34,24 @@
                                                 <constraint firstAttribute="width" secondItem="88G-vb-WLc" secondAttribute="height" multiplier="1:1" id="sdH-1R-kRR"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Hej-st-uRH">
+                                            <rect key="frame" x="561" y="35.5" width="19" height="19"/>
+                                            <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="19" id="vPr-SU-6EH"/>
+                                                <constraint firstAttribute="height" constant="19" id="w3g-Gu-Ouv"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0qK-hP-7Z6" firstAttribute="top" secondItem="huq-WY-2JU" secondAttribute="top" constant="10" id="Cgr-E9-YnU"/>
                                         <constraint firstAttribute="trailing" secondItem="0qK-hP-7Z6" secondAttribute="trailing" constant="20" id="ITz-G4-4Bw"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hej-st-uRH" secondAttribute="trailing" constant="20" id="U92-tc-cru"/>
                                         <constraint firstItem="88G-vb-WLc" firstAttribute="top" secondItem="huq-WY-2JU" secondAttribute="top" constant="10" id="ZKQ-5A-94A"/>
                                         <constraint firstItem="0qK-hP-7Z6" firstAttribute="leading" secondItem="88G-vb-WLc" secondAttribute="trailing" constant="18.5" id="bZb-pN-k94"/>
                                         <constraint firstItem="88G-vb-WLc" firstAttribute="leading" secondItem="huq-WY-2JU" secondAttribute="leading" constant="15" id="gXA-pT-QQG"/>
                                         <constraint firstAttribute="bottom" secondItem="88G-vb-WLc" secondAttribute="bottom" constant="10" id="iNm-cI-Edz"/>
+                                        <constraint firstItem="Hej-st-uRH" firstAttribute="centerY" secondItem="huq-WY-2JU" secondAttribute="centerY" id="oaS-Zx-et6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -99,4 +109,7 @@
             <point key="canvasLocation" x="-912" y="323"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Arrow" width="19" height="19"/>
+    </resources>
 </document>
