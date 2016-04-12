@@ -17,12 +17,12 @@ class GUUser : NSObject {
         super.init()
     }
 
-    func userId() -> Int? { return userDict["id"] as? Int }
-    func loginName() -> String? { return userDict["login"] as? String }
-    func avatar() -> String? { return userDict["avatar_url"] as? String }
-    func profileLink() -> String? { return userDict["html_url"] as? String }
+    var userId: Int? { return userDict["id"] as? Int }
+    var loginName: String? { return userDict["login"] as? String }
+    var avatar: String? { return userDict["avatar_url"] as? String }
+    var profileLink: String? { return userDict["html_url"] as? String }
  
-    class func fetchUsers(page: GUUsersPage!, completion: GUGetUsersCompletion!) -> GUOperation! {
+    class func fetchUsers(page: GUUsersPage!, completion: GUGetUsersCompletion?) -> GUOperation {
         return GUGetUsersOperation(page: page, usersCompletion: completion)
     }
 

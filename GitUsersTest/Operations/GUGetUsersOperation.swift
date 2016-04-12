@@ -12,13 +12,13 @@ import Foundation
 
 class GUUsersPage: NSObject {
 
-    var URL: NSURL!
+    var URL: NSURL
     
-    init(url: NSURL!) {
+    init(url: NSURL) {
         URL = url
     }
 
-    class func fistPage(since: UInt, per_page: UInt) -> GUUsersPage! {
+    class func fistPage(since: UInt, per_page: UInt) -> GUUsersPage {
         let urlComponents = NSURLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.github.com"
@@ -46,7 +46,7 @@ class GUGetUsersOperation : GUApiOperation {
     private var pageUrl: NSURLComponents!
     private var nextPage: GUUsersPage?
     
-    init(page aPage: GUUsersPage!, usersCompletion: GUGetUsersCompletion?) {
+    init(page aPage: GUUsersPage, usersCompletion: GUGetUsersCompletion?) {
         getUsersCompletion = usersCompletion
         pageUrl = NSURLComponents(URL: aPage.URL, resolvingAgainstBaseURL: false)
         
@@ -99,7 +99,7 @@ class GUGetUsersOperation : GUApiOperation {
             }
             
             if nextLink != nil {
-                self.nextPage = GUUsersPage(url: NSURL(string: nextLink!))
+                self.nextPage = GUUsersPage(url: NSURL(string: nextLink!)!)
             }
         }
         

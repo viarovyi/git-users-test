@@ -33,11 +33,11 @@ class GUUserCell : UITableViewCell {
     
     func update(user: GUUser!) {
         
-        self.loginLabel.text = user.loginName()
+        self.loginLabel.text = user.loginName
         
         // update user picture
         self.avatarImageView.image = UIImage(named: "Profile")
-        if let image = user.avatar(), let url = NSURL(string: image) {
+        if let image = user.avatar, let url = NSURL(string: image) {
             self.getAvatarOperation = GUGetImageOperation(url: url, completion: {
                 [weak self] (img, error) -> Void in
                 guard let strongSelf = self where error == nil else { return }

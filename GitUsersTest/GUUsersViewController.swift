@@ -55,7 +55,7 @@ class GUUsersViewController: UITableViewController {
                 strongSelf.canLoadMore = false
             }
             
-            strongSelf.currentPage = nextPage
+            strongSelf.currentPage = nextPage!
             strongSelf.isLoading = false
         })
     }
@@ -119,7 +119,7 @@ extension GUUsersViewController {
         }
         
         let user = self.userList[indexPath.row]
-        if let link = user.profileLink(), let url = NSURL(string: link) {
+        if let link = user.profileLink, let url = NSURL(string: link) {
             if #available(iOS 9.0, *) {
                 let svc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
                 self.navigationController?.pushViewController(svc, animated: true)
@@ -144,7 +144,7 @@ extension GUUsersViewController : GUUserCellDelegate {
 
         let user = self.userList[indexPath.row]
         
-        if let avatar = user.avatar(), url = NSURL(string: avatar), parentView = self.view.superview {
+        if let avatar = user.avatar, url = NSURL(string: avatar), parentView = self.view.superview {
             let imageFrame = cell.avatarImageView.convertRect(cell.avatarImageView.bounds, toView: parentView)
             self.previewAvatar(url, parentView: parentView, frame: imageFrame)
         }
